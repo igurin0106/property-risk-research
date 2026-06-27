@@ -1,53 +1,8 @@
 import { UrbanPlanningInfo } from '@/types/property';
+import { AllMunicipalityZoning } from '@/all-municipality-zoning';
 
-// 市区町村単位の用途地域データベース
-const municipalityDatabase: Record<string, UrbanPlanningInfo> = {
-  '江東区': {
-    zoneType: '第1種住居地域',
-    buildingCoverageRatio: 60,
-    floorAreaRatio: 200,
-    fireDesignation: '指定なし',
-    semiFireDesignation: '指定なし',
-    heightDistrict: '指定なし',
-    urbanPlanningArea: '江東区',
-  },
-  '渋谷区': {
-    zoneType: '商業地域',
-    buildingCoverageRatio: 80,
-    floorAreaRatio: 600,
-    fireDesignation: '防火地域',
-    semiFireDesignation: '指定なし',
-    heightDistrict: '高さ制限あり',
-    urbanPlanningArea: '渋谷区',
-  },
-  '新宿区': {
-    zoneType: '商業地域',
-    buildingCoverageRatio: 80,
-    floorAreaRatio: 600,
-    fireDesignation: '防火地域',
-    semiFireDesignation: '指定なし',
-    heightDistrict: '高さ制限あり',
-    urbanPlanningArea: '新宿区',
-  },
-  '大阪市北区': {
-    zoneType: '近隣商業地域',
-    buildingCoverageRatio: 75,
-    floorAreaRatio: 500,
-    fireDesignation: '準防火地域',
-    semiFireDesignation: '指定なし',
-    heightDistrict: '指定なし',
-    urbanPlanningArea: '大阪市',
-  },
-  '京都市中京区': {
-    zoneType: '第2種住居地域',
-    buildingCoverageRatio: 60,
-    floorAreaRatio: 250,
-    fireDesignation: '指定なし',
-    semiFireDesignation: '準防火地域',
-    heightDistrict: '指定なし',
-    urbanPlanningArea: '京都市',
-  },
-};
+// 市区町村単位の用途地域データベース（全国対応版・456市区町村）
+const municipalityDatabase: Record<string, UrbanPlanningInfo> = AllMunicipalityZoning;
 
 export async function fetchUrbanPlanningInfo(latitude: number, longitude: number): Promise<UrbanPlanningInfo> {
   try {

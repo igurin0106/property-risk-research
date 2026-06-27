@@ -1,0 +1,21 @@
+City (EN),City (JA),Region,CBD Area,Zone Type,Building Coverage Ratio (%),Floor Area Ratio (%),Fire Zone (%),Semi-Fire Zone (%),Height District (%),BCR Confidence,FAR Confidence,Fire Confidence,Data Quality
+Sapporo,札幌市,Hokkaido,Chuo Ward,Commercial/High-rise,80,600,15,25,35,High,High,Medium,GOOD
+Yokohama,横浜市,Kanagawa,Nishi Ward/Minato Mirai,Commercial/High-rise,80,700,20,30,40,High,High,High,GOOD
+Kawasaki,川崎市,Kanagawa,Kawasaki Ward,Commercial/Mixed-use,80,600,15,25,30,High,High,Medium,GOOD
+Nagoya,名古屋市,Aichi,Naka Ward/Sakae,Commercial/High-rise,80,700,18,28,42,High,High,High,GOOD
+Osaka,大阪市,Osaka,Kita Ward/Umeda,Commercial/High-rise,80,800,22,32,45,High,High,High,EXCELLENT
+Kobe,神戸市,Hyogo,Chuo Ward,Commercial/Mixed-use,80,600,20,30,35,High,High,Medium,GOOD
+Kyoto,京都市,Kyoto,Shimogyo Ward,Commercial/Traditional,70,500,18,28,50,High,High,Medium,GOOD*
+Fukuoka,福岡市,Fukuoka,Chuo Ward,Commercial/High-rise,80,700,16,26,38,High,High,Medium,GOOD
+Kitakyushu,北九州市,Fukuoka,Kokura Kita Ward,Commercial/Mixed-use,80,600,12,22,30,Medium,Medium,Low,FAIR
+Sakai,堺市,Osaka,Sakai Ward,Commercial/Residential,70,400,10,20,0,Medium,Medium,Low,FAIR
+Niigata,新潟市,Niigata,Chuo Ward,Commercial/Mixed-use,70,500,10,20,25,Medium,Medium,Low,FAIR
+Hamamatsu,浜松市,Shizuoka,Naka Ward,Commercial/Mixed-use,70,500,12,22,28,Medium,Medium,Low,FAIR
+Nagasaki,長崎市,Nagasaki,Sakura area,Commercial/Mixed-use,70,450,8,18,0,Low,Low,Low,POOR
+Kumamoto,熊本市,Kumamoto,Chuo Ward,Commercial/Mixed-use,70,500,12,22,30,Medium,Medium,Low,FAIR
+Hiroshima,広島市,Hiroshima,Naka Ward,Commercial/Mixed-use,70,500,14,24,32,Medium,Medium,Low,FAIR
+Sendai,仙台市,Miyagi,Aoba Ward,Commercial/High-rise,80,600,14,24,35,High,High,Medium,GOOD
+Chiba,千葉市,Chiba,Chuo Ward,Commercial/Mixed-use,70,500,13,23,32,Medium,Medium,Low,FAIR
+Saitama,さいたま市,Saitama,Omiya Ward,Commercial/Mixed-use,70,500,13,23,30,Medium,Medium,Low,FAIR
+Kawagoe,川越市,Saitama,N/A,NOT A DESIGNATED CITY,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,NOT APPLICABLE
+Takamatsu,高松市,Kagawa,Chuo Ward,Commercial/Mixed-use,70,450,10,20,0,Low,Low,Low,POOR

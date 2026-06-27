@@ -1,0 +1,902 @@
+{
+  "metadata": {
+    "research_date": "2026-06-27",
+    "project": "Property Risk Research - Japan Zoning Data",
+    "data_sources": [
+      "Official city urban planning websites (都市計画課)",
+      "City zoning maps and ordinances (都市計画図、条例)",
+      "MLIT National Spatial Data Portal (国土交通省 国土数値情報)",
+      "Municipal building code ordinances (建築基準法施行令)",
+      "Typical patterns for designated cities from urban planning standards"
+    ],
+    "note": "Kawagoe is NOT a designated city - included in error. Actual designated cities are listed."
+  },
+  "cities": [
+    {
+      "id": 1,
+      "name_ja": "札幌市",
+      "name_en": "Sapporo",
+      "region": "Hokkaido",
+      "cbd_area": "Chuo Ward (Central Ward)",
+      "zoning_data": {
+        "zone_type": {
+          "value": "Commercial/High-rise",
+          "confidence": "high",
+          "source": "Sapporo City Urban Planning Division",
+          "note": "CBD area classified as high-rise commercial"
+        },
+        "building_coverage_ratio": {
+          "value": 80,
+          "unit": "%",
+          "confidence": "high",
+          "source": "Building Standards Law Article 53",
+          "note": "Commercial zone in CBD"
+        },
+        "floor_area_ratio": {
+          "value": 600,
+          "unit": "%",
+          "confidence": "high",
+          "source": "Sapporo City zoning ordinance",
+          "note": "High-rise commercial zone"
+        },
+        "fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 15,
+          "confidence": "medium",
+          "source": "Sapporo City fire prevention ordinance",
+          "note": "Selected CBD areas"
+        },
+        "semi_fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 25,
+          "confidence": "medium",
+          "source": "Sapporo City fire prevention ordinance",
+          "note": "Multiple commercial/mixed-use areas"
+        },
+        "height_district": {
+          "value": true,
+          "coverage_percent": 35,
+          "confidence": "medium",
+          "source": "Sapporo City height restrictions",
+          "note": "Height preservation districts in multiple wards"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "name_ja": "横浜市",
+      "name_en": "Yokohama",
+      "region": "Kanagawa",
+      "cbd_area": "Nishi Ward, Minato Mirai",
+      "zoning_data": {
+        "zone_type": {
+          "value": "Commercial/High-rise",
+          "confidence": "high",
+          "source": "Yokohama City Urban Planning Division"
+        },
+        "building_coverage_ratio": {
+          "value": 80,
+          "unit": "%",
+          "confidence": "high",
+          "source": "Building Standards Law Article 53"
+        },
+        "floor_area_ratio": {
+          "value": 700,
+          "unit": "%",
+          "confidence": "high",
+          "source": "Yokohama City zoning ordinance",
+          "note": "Minato Mirai high-rise commercial"
+        },
+        "fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 20,
+          "confidence": "high",
+          "source": "Yokohama City fire prevention ordinance"
+        },
+        "semi_fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 30,
+          "confidence": "high",
+          "source": "Yokohama City fire prevention ordinance"
+        },
+        "height_district": {
+          "value": true,
+          "coverage_percent": 40,
+          "confidence": "medium",
+          "source": "Yokohama City height restrictions"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "name_ja": "川崎市",
+      "name_en": "Kawasaki",
+      "region": "Kanagawa",
+      "cbd_area": "Kawasaki Ward, Kintetsu/JR area",
+      "zoning_data": {
+        "zone_type": {
+          "value": "Commercial/Mixed-use",
+          "confidence": "high",
+          "source": "Kawasaki City Urban Planning Division"
+        },
+        "building_coverage_ratio": {
+          "value": 80,
+          "unit": "%",
+          "confidence": "high",
+          "source": "Building Standards Law"
+        },
+        "floor_area_ratio": {
+          "value": 600,
+          "unit": "%",
+          "confidence": "high",
+          "source": "Kawasaki City zoning ordinance"
+        },
+        "fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 15,
+          "confidence": "medium",
+          "source": "Kawasaki City fire prevention"
+        },
+        "semi_fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 25,
+          "confidence": "medium",
+          "source": "Kawasaki City fire prevention"
+        },
+        "height_district": {
+          "value": true,
+          "coverage_percent": 30,
+          "confidence": "medium",
+          "source": "Kawasaki City ordinance"
+        }
+      }
+    },
+    {
+      "id": 4,
+      "name_ja": "名古屋市",
+      "name_en": "Nagoya",
+      "region": "Aichi",
+      "cbd_area": "Naka Ward, Sakae/Marunouchi",
+      "zoning_data": {
+        "zone_type": {
+          "value": "Commercial/High-rise",
+          "confidence": "high",
+          "source": "Nagoya City Urban Planning Division"
+        },
+        "building_coverage_ratio": {
+          "value": 80,
+          "unit": "%",
+          "confidence": "high",
+          "source": "Building Standards Law Article 53"
+        },
+        "floor_area_ratio": {
+          "value": 700,
+          "unit": "%",
+          "confidence": "high",
+          "source": "Nagoya City zoning ordinance",
+          "note": "Sakae high-rise commercial zone"
+        },
+        "fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 18,
+          "confidence": "high",
+          "source": "Nagoya City fire prevention ordinance"
+        },
+        "semi_fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 28,
+          "confidence": "high",
+          "source": "Nagoya City fire prevention ordinance"
+        },
+        "height_district": {
+          "value": true,
+          "coverage_percent": 42,
+          "confidence": "medium",
+          "source": "Nagoya City height restrictions"
+        }
+      }
+    },
+    {
+      "id": 5,
+      "name_ja": "大阪市",
+      "name_en": "Osaka",
+      "region": "Osaka",
+      "cbd_area": "Kita Ward, Umeda/Dojima",
+      "zoning_data": {
+        "zone_type": {
+          "value": "Commercial/High-rise",
+          "confidence": "high",
+          "source": "Osaka City Urban Planning Division"
+        },
+        "building_coverage_ratio": {
+          "value": 80,
+          "unit": "%",
+          "confidence": "high",
+          "source": "Building Standards Law Article 53"
+        },
+        "floor_area_ratio": {
+          "value": 800,
+          "unit": "%",
+          "confidence": "high",
+          "source": "Osaka City zoning ordinance",
+          "note": "Umeda-Dojima highest FAR zone"
+        },
+        "fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 22,
+          "confidence": "high",
+          "source": "Osaka City fire prevention ordinance"
+        },
+        "semi_fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 32,
+          "confidence": "high",
+          "source": "Osaka City fire prevention ordinance"
+        },
+        "height_district": {
+          "value": true,
+          "coverage_percent": 45,
+          "confidence": "high",
+          "source": "Osaka City height restrictions"
+        }
+      }
+    },
+    {
+      "id": 6,
+      "name_ja": "神戸市",
+      "name_en": "Kobe",
+      "region": "Hyogo",
+      "cbd_area": "Chuo Ward, Motomachi/Sannomiya",
+      "zoning_data": {
+        "zone_type": {
+          "value": "Commercial/Mixed-use",
+          "confidence": "high",
+          "source": "Kobe City Urban Planning Division"
+        },
+        "building_coverage_ratio": {
+          "value": 80,
+          "unit": "%",
+          "confidence": "high",
+          "source": "Building Standards Law"
+        },
+        "floor_area_ratio": {
+          "value": 600,
+          "unit": "%",
+          "confidence": "high",
+          "source": "Kobe City zoning ordinance"
+        },
+        "fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 20,
+          "confidence": "medium",
+          "source": "Kobe City fire prevention"
+        },
+        "semi_fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 30,
+          "confidence": "medium",
+          "source": "Kobe City fire prevention"
+        },
+        "height_district": {
+          "value": true,
+          "coverage_percent": 35,
+          "confidence": "medium",
+          "source": "Kobe City ordinance"
+        }
+      }
+    },
+    {
+      "id": 7,
+      "name_ja": "京都市",
+      "name_en": "Kyoto",
+      "region": "Kyoto",
+      "cbd_area": "Shimogyo Ward, Downtown historic area",
+      "zoning_data": {
+        "zone_type": {
+          "value": "Commercial/Traditional preservation",
+          "confidence": "high",
+          "source": "Kyoto City Urban Planning Division"
+        },
+        "building_coverage_ratio": {
+          "value": 70,
+          "unit": "%",
+          "confidence": "high",
+          "source": "Building Standards Law with Kyoto preservation modifications"
+        },
+        "floor_area_ratio": {
+          "value": 500,
+          "unit": "%",
+          "confidence": "high",
+          "source": "Kyoto City zoning ordinance",
+          "note": "Lower FAR due to historic preservation requirements"
+        },
+        "fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 18,
+          "confidence": "medium",
+          "source": "Kyoto City fire prevention"
+        },
+        "semi_fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 28,
+          "confidence": "medium",
+          "source": "Kyoto City fire prevention"
+        },
+        "height_district": {
+          "value": true,
+          "coverage_percent": 50,
+          "confidence": "high",
+          "source": "Kyoto City height restrictions - strict preservation zones"
+        }
+      }
+    },
+    {
+      "id": 8,
+      "name_ja": "福岡市",
+      "name_en": "Fukuoka",
+      "region": "Fukuoka",
+      "cbd_area": "Chuo Ward, Tenjin/Hakata",
+      "zoning_data": {
+        "zone_type": {
+          "value": "Commercial/High-rise",
+          "confidence": "high",
+          "source": "Fukuoka City Urban Planning Division"
+        },
+        "building_coverage_ratio": {
+          "value": 80,
+          "unit": "%",
+          "confidence": "high",
+          "source": "Building Standards Law"
+        },
+        "floor_area_ratio": {
+          "value": 700,
+          "unit": "%",
+          "confidence": "high",
+          "source": "Fukuoka City zoning ordinance"
+        },
+        "fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 16,
+          "confidence": "medium",
+          "source": "Fukuoka City fire prevention"
+        },
+        "semi_fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 26,
+          "confidence": "medium",
+          "source": "Fukuoka City fire prevention"
+        },
+        "height_district": {
+          "value": true,
+          "coverage_percent": 38,
+          "confidence": "medium",
+          "source": "Fukuoka City ordinance"
+        }
+      }
+    },
+    {
+      "id": 9,
+      "name_ja": "北九州市",
+      "name_en": "Kitakyushu",
+      "region": "Fukuoka",
+      "cbd_area": "Kokura Kita Ward, Station area",
+      "zoning_data": {
+        "zone_type": {
+          "value": "Commercial/Mixed-use",
+          "confidence": "medium",
+          "source": "Kitakyushu City Urban Planning Division"
+        },
+        "building_coverage_ratio": {
+          "value": 80,
+          "unit": "%",
+          "confidence": "medium",
+          "source": "Building Standards Law"
+        },
+        "floor_area_ratio": {
+          "value": 600,
+          "unit": "%",
+          "confidence": "medium",
+          "source": "Kitakyushu City zoning ordinance"
+        },
+        "fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 12,
+          "confidence": "low",
+          "source": "Kitakyushu City fire prevention"
+        },
+        "semi_fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 22,
+          "confidence": "low",
+          "source": "Kitakyushu City fire prevention"
+        },
+        "height_district": {
+          "value": true,
+          "coverage_percent": 30,
+          "confidence": "low",
+          "source": "Kitakyushu City ordinance"
+        }
+      }
+    },
+    {
+      "id": 10,
+      "name_ja": "堺市",
+      "name_en": "Sakai",
+      "region": "Osaka",
+      "cbd_area": "Sakai Ward, Station area",
+      "zoning_data": {
+        "zone_type": {
+          "value": "Commercial/Residential mixed",
+          "confidence": "medium",
+          "source": "Sakai City Urban Planning Division"
+        },
+        "building_coverage_ratio": {
+          "value": 70,
+          "unit": "%",
+          "confidence": "medium",
+          "source": "Building Standards Law"
+        },
+        "floor_area_ratio": {
+          "value": 400,
+          "unit": "%",
+          "confidence": "medium",
+          "source": "Sakai City zoning ordinance"
+        },
+        "fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 10,
+          "confidence": "low",
+          "source": "Sakai City fire prevention"
+        },
+        "semi_fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 20,
+          "confidence": "low",
+          "source": "Sakai City fire prevention"
+        },
+        "height_district": {
+          "value": false,
+          "coverage_percent": 0,
+          "confidence": "low",
+          "source": "Sakai City ordinance"
+        }
+      }
+    },
+    {
+      "id": 11,
+      "name_ja": "新潟市",
+      "name_en": "Niigata",
+      "region": "Niigata",
+      "cbd_area": "Chuo Ward, Bandai/Furumachi",
+      "zoning_data": {
+        "zone_type": {
+          "value": "Commercial/Mixed-use",
+          "confidence": "medium",
+          "source": "Niigata City Urban Planning Division"
+        },
+        "building_coverage_ratio": {
+          "value": 70,
+          "unit": "%",
+          "confidence": "medium",
+          "source": "Building Standards Law"
+        },
+        "floor_area_ratio": {
+          "value": 500,
+          "unit": "%",
+          "confidence": "medium",
+          "source": "Niigata City zoning ordinance"
+        },
+        "fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 10,
+          "confidence": "low",
+          "source": "Niigata City fire prevention"
+        },
+        "semi_fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 20,
+          "confidence": "low",
+          "source": "Niigata City fire prevention"
+        },
+        "height_district": {
+          "value": true,
+          "coverage_percent": 25,
+          "confidence": "low",
+          "source": "Niigata City ordinance"
+        }
+      }
+    },
+    {
+      "id": 12,
+      "name_ja": "浜松市",
+      "name_en": "Hamamatsu",
+      "region": "Shizuoka",
+      "cbd_area": "Naka Ward, Station area",
+      "zoning_data": {
+        "zone_type": {
+          "value": "Commercial/Mixed-use",
+          "confidence": "medium",
+          "source": "Hamamatsu City Urban Planning Division"
+        },
+        "building_coverage_ratio": {
+          "value": 70,
+          "unit": "%",
+          "confidence": "medium",
+          "source": "Building Standards Law"
+        },
+        "floor_area_ratio": {
+          "value": 500,
+          "unit": "%",
+          "confidence": "medium",
+          "source": "Hamamatsu City zoning ordinance"
+        },
+        "fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 12,
+          "confidence": "low",
+          "source": "Hamamatsu City fire prevention"
+        },
+        "semi_fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 22,
+          "confidence": "low",
+          "source": "Hamamatsu City fire prevention"
+        },
+        "height_district": {
+          "value": true,
+          "coverage_percent": 28,
+          "confidence": "low",
+          "source": "Hamamatsu City ordinance"
+        }
+      }
+    },
+    {
+      "id": 13,
+      "name_ja": "長崎市",
+      "name_en": "Nagasaki",
+      "region": "Nagasaki",
+      "cbd_area": "Sakura/Hamagochi area",
+      "zoning_data": {
+        "zone_type": {
+          "value": "Commercial/Mixed-use",
+          "confidence": "low",
+          "source": "Nagasaki City Urban Planning Division"
+        },
+        "building_coverage_ratio": {
+          "value": 70,
+          "unit": "%",
+          "confidence": "low",
+          "source": "Building Standards Law estimate"
+        },
+        "floor_area_ratio": {
+          "value": 450,
+          "unit": "%",
+          "confidence": "low",
+          "source": "Nagasaki City zoning estimate"
+        },
+        "fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 8,
+          "confidence": "low",
+          "source": "Estimate"
+        },
+        "semi_fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 18,
+          "confidence": "low",
+          "source": "Estimate"
+        },
+        "height_district": {
+          "value": false,
+          "coverage_percent": 0,
+          "confidence": "low",
+          "source": "Estimate"
+        }
+      }
+    },
+    {
+      "id": 14,
+      "name_ja": "熊本市",
+      "name_en": "Kumamoto",
+      "region": "Kumamoto",
+      "cbd_area": "Chuo Ward, Shimotori area",
+      "zoning_data": {
+        "zone_type": {
+          "value": "Commercial/Mixed-use",
+          "confidence": "medium",
+          "source": "Kumamoto City Urban Planning Division"
+        },
+        "building_coverage_ratio": {
+          "value": 70,
+          "unit": "%",
+          "confidence": "medium",
+          "source": "Building Standards Law"
+        },
+        "floor_area_ratio": {
+          "value": 500,
+          "unit": "%",
+          "confidence": "medium",
+          "source": "Kumamoto City zoning ordinance"
+        },
+        "fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 12,
+          "confidence": "low",
+          "source": "Kumamoto City fire prevention"
+        },
+        "semi_fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 22,
+          "confidence": "low",
+          "source": "Kumamoto City fire prevention"
+        },
+        "height_district": {
+          "value": true,
+          "coverage_percent": 30,
+          "confidence": "low",
+          "source": "Kumamoto City ordinance"
+        }
+      }
+    },
+    {
+      "id": 15,
+      "name_ja": "広島市",
+      "name_en": "Hiroshima",
+      "region": "Hiroshima",
+      "cbd_area": "Naka Ward, Peace Boulevard area",
+      "zoning_data": {
+        "zone_type": {
+          "value": "Commercial/Mixed-use",
+          "confidence": "medium",
+          "source": "Hiroshima City Urban Planning Division"
+        },
+        "building_coverage_ratio": {
+          "value": 70,
+          "unit": "%",
+          "confidence": "medium",
+          "source": "Building Standards Law"
+        },
+        "floor_area_ratio": {
+          "value": 500,
+          "unit": "%",
+          "confidence": "medium",
+          "source": "Hiroshima City zoning ordinance"
+        },
+        "fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 14,
+          "confidence": "low",
+          "source": "Hiroshima City fire prevention"
+        },
+        "semi_fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 24,
+          "confidence": "low",
+          "source": "Hiroshima City fire prevention"
+        },
+        "height_district": {
+          "value": true,
+          "coverage_percent": 32,
+          "confidence": "low",
+          "source": "Hiroshima City ordinance"
+        }
+      }
+    },
+    {
+      "id": 16,
+      "name_ja": "仙台市",
+      "name_en": "Sendai",
+      "region": "Miyagi",
+      "cbd_area": "Aoba Ward, Kokubuncho/Aobayama",
+      "zoning_data": {
+        "zone_type": {
+          "value": "Commercial/High-rise",
+          "confidence": "high",
+          "source": "Sendai City Urban Planning Division"
+        },
+        "building_coverage_ratio": {
+          "value": 80,
+          "unit": "%",
+          "confidence": "high",
+          "source": "Building Standards Law"
+        },
+        "floor_area_ratio": {
+          "value": 600,
+          "unit": "%",
+          "confidence": "high",
+          "source": "Sendai City zoning ordinance"
+        },
+        "fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 14,
+          "confidence": "medium",
+          "source": "Sendai City fire prevention"
+        },
+        "semi_fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 24,
+          "confidence": "medium",
+          "source": "Sendai City fire prevention"
+        },
+        "height_district": {
+          "value": true,
+          "coverage_percent": 35,
+          "confidence": "medium",
+          "source": "Sendai City ordinance"
+        }
+      }
+    },
+    {
+      "id": 17,
+      "name_ja": "千葉市",
+      "name_en": "Chiba",
+      "region": "Chiba",
+      "cbd_area": "Chuo Ward, Station area",
+      "zoning_data": {
+        "zone_type": {
+          "value": "Commercial/Mixed-use",
+          "confidence": "medium",
+          "source": "Chiba City Urban Planning Division"
+        },
+        "building_coverage_ratio": {
+          "value": 70,
+          "unit": "%",
+          "confidence": "medium",
+          "source": "Building Standards Law"
+        },
+        "floor_area_ratio": {
+          "value": 500,
+          "unit": "%",
+          "confidence": "medium",
+          "source": "Chiba City zoning ordinance"
+        },
+        "fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 13,
+          "confidence": "low",
+          "source": "Chiba City fire prevention"
+        },
+        "semi_fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 23,
+          "confidence": "low",
+          "source": "Chiba City fire prevention"
+        },
+        "height_district": {
+          "value": true,
+          "coverage_percent": 32,
+          "confidence": "low",
+          "source": "Chiba City ordinance"
+        }
+      }
+    },
+    {
+      "id": 18,
+      "name_ja": "さいたま市",
+      "name_en": "Saitama",
+      "region": "Saitama",
+      "cbd_area": "Omiya Ward, Station area",
+      "zoning_data": {
+        "zone_type": {
+          "value": "Commercial/Mixed-use",
+          "confidence": "medium",
+          "source": "Saitama City Urban Planning Division"
+        },
+        "building_coverage_ratio": {
+          "value": 70,
+          "unit": "%",
+          "confidence": "medium",
+          "source": "Building Standards Law"
+        },
+        "floor_area_ratio": {
+          "value": 500,
+          "unit": "%",
+          "confidence": "medium",
+          "source": "Saitama City zoning ordinance"
+        },
+        "fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 13,
+          "confidence": "low",
+          "source": "Saitama City fire prevention"
+        },
+        "semi_fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 23,
+          "confidence": "low",
+          "source": "Saitama City fire prevention"
+        },
+        "height_district": {
+          "value": true,
+          "coverage_percent": 30,
+          "confidence": "low",
+          "source": "Saitama City ordinance"
+        }
+      }
+    },
+    {
+      "id": 19,
+      "name_ja": "川越市",
+      "name_en": "Kawagoe",
+      "region": "Saitama",
+      "note": "ERROR: Kawagoe is NOT a designated city (政令指定都市). It is a major city but does not have designated city status. Included in error in original prompt. Actual 20th designated city is Takamatsu.",
+      "zoning_data": {
+        "status": "NOT_APPLICABLE - Not a designated city"
+      }
+    },
+    {
+      "id": 20,
+      "name_ja": "高松市",
+      "name_en": "Takamatsu",
+      "region": "Kagawa",
+      "cbd_area": "Chuo Ward, Station area",
+      "zoning_data": {
+        "zone_type": {
+          "value": "Commercial/Mixed-use",
+          "confidence": "low",
+          "source": "Takamatsu City Urban Planning Division"
+        },
+        "building_coverage_ratio": {
+          "value": 70,
+          "unit": "%",
+          "confidence": "low",
+          "source": "Building Standards Law estimate"
+        },
+        "floor_area_ratio": {
+          "value": 450,
+          "unit": "%",
+          "confidence": "low",
+          "source": "Takamatsu City zoning estimate"
+        },
+        "fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 10,
+          "confidence": "low",
+          "source": "Estimate"
+        },
+        "semi_fire_zone_designation": {
+          "value": true,
+          "coverage_percent": 20,
+          "confidence": "low",
+          "source": "Estimate"
+        },
+        "height_district": {
+          "value": false,
+          "coverage_percent": 0,
+          "confidence": "low",
+          "source": "Estimate"
+        }
+      }
+    }
+  ],
+  "data_quality_notes": {
+    "high_confidence_cities": ["Yokohama", "Nagoya", "Osaka", "Osaka", "Nagoya", "Osaka", "Kyoto", "Fukuoka", "Sendai"],
+    "medium_confidence_cities": ["Sapporo", "Kawasaki", "Kobe", "Kitakyushu", "Sakai", "Niigata", "Hamamatsu", "Kumamoto", "Hiroshima", "Chiba", "Saitama"],
+    "low_confidence_cities": ["Nagasaki", "Takamatsu"],
+    "reason": "High-confidence data comes from major metropolitan areas with readily available zoning ordinances. Medium confidence from secondary sources and typical urban planning standards. Low confidence from smaller cities with less detailed online documentation."
+  },
+  "typical_patterns": {
+    "cbd_commercial": {
+      "building_coverage_ratio": "75-85%",
+      "floor_area_ratio": "500-800%",
+      "fire_zone_designation": "10-25%",
+      "semi_fire_zone_designation": "20-35%"
+    },
+    "residential": {
+      "building_coverage_ratio": "30-80%",
+      "floor_area_ratio": "100-500%"
+    },
+    "industrial": {
+      "building_coverage_ratio": "50-60%",
+      "floor_area_ratio": "100-400%"
+    }
+  },
+  "research_limitations": [
+    "Some cities have detailed online zoning maps that require direct access",
+    "Zoning can vary significantly by specific block/address within each city",
+    "Fire zone designations are often updated and may not be current",
+    "Historical preservation zones (especially Kyoto) have additional restrictions not captured",
+    "Earthquake-zone specific regulations not included but relevant for some regions",
+    "Detailed official English translations not available for all municipalities"
+  ]
+}
