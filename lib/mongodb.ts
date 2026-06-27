@@ -11,7 +11,7 @@ interface CachedConnection {
   promise: Promise<Connection> | null;
 }
 
-let cached: CachedConnection = {
+const cached: CachedConnection = {
   conn: null,
   promise: null,
 };

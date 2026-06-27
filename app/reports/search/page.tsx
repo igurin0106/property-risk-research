@@ -40,7 +40,7 @@ function SearchResultsContent({ address, lat, lng }: { address: string; lat: num
             setHazards(data.data);
           }
         }
-      } catch (err) {
+      } catch {
         setError('情報取得に失敗しました');
       } finally {
         setIsLoading(false);

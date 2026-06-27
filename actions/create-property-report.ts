@@ -34,7 +34,7 @@ export async function createPropertyReport(
         address: report.address,
       },
     };
-  } catch (error) {
+  } catch {
     return {
       success: false,
       error: {

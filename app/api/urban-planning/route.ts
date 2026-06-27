@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { fetchUrbanPlanningInfo } from '@/services/reinfolib-service';
+import { getZodErrorMessage } from '@/lib/zod-error';
 
 const UrbanPlanningRequestSchema = z.object({
   latitude: z.number().min(-90).max(90),
@@ -25,7 +26,7 @@ export async function POST(request: NextRequest) {
           success: false,
           error: {
             code: 'VALIDATION_ERROR',
-            message: error.errors[0].message,
+            message: getZodErrorMessage(error),
           },
         },
         { status: 400 }

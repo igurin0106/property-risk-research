@@ -13,9 +13,9 @@ export const PropertyReportCreateSchema = z.object({
   address: z.string().min(1),
   latitude: z.number(),
   longitude: z.number(),
-  urbanPlanning: z.record(z.unknown()).optional(),
-  hazards: z.record(z.unknown()).optional(),
-  evacuationSites: z.array(z.record(z.unknown())).optional(),
+  urbanPlanning: z.any().optional(),
+  hazards: z.any().optional(),
+  evacuationSites: z.any().optional(),
   salesMemo: z.string().optional(),
   acquisitionMemo: z.string().optional(),
 });

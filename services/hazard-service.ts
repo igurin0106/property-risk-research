@@ -3,7 +3,7 @@ import { HazardInfo } from '@/types/property';
 export async function fetchHazardInfo(latitude: number, longitude: number): Promise<HazardInfo> {
   try {
     return await fetchHazardInfoFromAPI(latitude, longitude);
-  } catch (error) {
+  } catch {
     return getDefaultHazardInfo();
   }
 }

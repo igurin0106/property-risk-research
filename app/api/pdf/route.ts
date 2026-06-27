@@ -1,13 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { generatePDFContent } from '@/services/pdf-service';
+import { getZodErrorMessage } from '@/lib/zod-error';
 
 const PDFRequestSchema = z.object({
   address: z.string().min(1),
   latitude: z.number(),
   longitude: z.number(),
-  urbanPlanning: z.record(z.unknown()).optional(),
-  hazards: z.record(z.unknown()).optional(),
+  urbanPlanning: z.any().optional(),
+  hazards: z.any().optional(),
   createdAt: z.string().optional(),
 });
 
@@ -36,7 +37,7 @@ export async function POST(request: NextRequest) {
           success: false,
           error: {
             code: 'VALIDATION_ERROR',
-            message: error.errors[0].message,
+            message: getZodErrorMessage(error),
           },
         },
         { status: 400 }

@@ -3,6 +3,7 @@
 import { FormEvent, useState } from 'react';
 import { AddressSearchSchema } from '@/lib/validators';
 import { ZodError } from 'zod';
+import { getZodErrorMessage } from '@/lib/zod-error';
 
 interface SearchAddressFormProps {
   onSearch: (address: string) => Promise<void>;
@@ -24,7 +25,9 @@ export function SearchAddressForm({ onSearch, isLoading = false }: SearchAddress
       await onSearch(validated.address);
     } catch (err) {
       if (err instanceof ZodError) {
-        setError(err.errors[0].message);
+        setError(getZodErrorMessage(err));
+      } else if (err instanceof Error) {
+        setError(err.message);
       } else {
         setError('検索に失敗しました。もう一度お試しください。');
       }

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { fetchHazardInfo } from '@/services/hazard-service';
+import { getZodErrorMessage } from '@/lib/zod-error';
 
 const HazardRequestSchema = z.object({
   latitude: z.number().min(-90).max(90),
@@ -25,7 +26,7 @@ export async function POST(request: NextRequest) {
           success: false,
           error: {
             code: 'VALIDATION_ERROR',
-            message: error.errors[0].message,
+            message: getZodErrorMessage(error),
           },
         },
         { status: 400 }

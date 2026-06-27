@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { geocodeAddress } from '@/services/geocoding-service';
+import { getZodErrorMessage } from '@/lib/zod-error';
 
 const GeocodesRequestSchema = z.object({
   address: z.string().min(1, 'Address is required'),
@@ -24,7 +25,7 @@ export async function POST(request: NextRequest) {
           success: false,
           error: {
             code: 'VALIDATION_ERROR',
-            message: error.errors[0].message,
+            message: getZodErrorMessage(error),
           },
         },
         { status: 400 }

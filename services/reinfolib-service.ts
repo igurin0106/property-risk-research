@@ -5,7 +5,7 @@ const ReinfolibResponseSchema = z.object({
   features: z
     .array(
       z.object({
-        properties: z.record(z.unknown()).optional(),
+        properties: z.any().optional(),
       })
     )
     .optional(),
@@ -56,7 +56,7 @@ export async function fetchUrbanPlanningInfo(latitude: number, longitude: number
       heightDistrict: extractProperty(properties, 'heightDistrict'),
       urbanPlanningArea: extractProperty(properties, 'urbanPlanningArea'),
     };
-  } catch (error) {
+  } catch {
     return {
       zoneType: '取得失敗',
     };
