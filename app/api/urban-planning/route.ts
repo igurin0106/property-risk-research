@@ -1,19 +1,21 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
-import { fetchUrbanPlanningInfo } from '@/services/reinfolib-service';
+import { fetchUrbanPlanningInfo, getUrbanPlanningByAddress } from '@/services/reinfolib-service';
 import { getZodErrorMessage } from '@/lib/zod-error';
 
 const UrbanPlanningRequestSchema = z.object({
   latitude: z.number().min(-90).max(90),
   longitude: z.number().min(-180).max(180),
+  address: z.string().optional(),
 });
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { latitude, longitude } = UrbanPlanningRequestSchema.parse(body);
+    const { latitude, longitude, address } = UrbanPlanningRequestSchema.parse(body);
 
-    const data = await fetchUrbanPlanningInfo(latitude, longitude);
+    // 住所がある場合は住所から取得、ない場合は座標から取得
+    const data = address ? getUrbanPlanningByAddress(address) : await fetchUrbanPlanningInfo(latitude, longitude);
 
     return NextResponse.json({
       success: true,

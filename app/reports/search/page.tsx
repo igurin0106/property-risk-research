@@ -18,12 +18,12 @@ function SearchResultsContent({ address, lat, lng }: { address: string; lat: num
           fetch('/api/urban-planning', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ latitude: lat, longitude: lng }),
+            body: JSON.stringify({ latitude: lat, longitude: lng, address }),
           }),
           fetch('/api/hazards', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ latitude: lat, longitude: lng }),
+            body: JSON.stringify({ latitude: lat, longitude: lng, address }),
           }),
         ]);
 
