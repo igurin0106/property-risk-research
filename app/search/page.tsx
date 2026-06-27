@@ -6,9 +6,11 @@ import { SearchAddressForm } from '@/components/forms/SearchAddressForm';
 
 export default function SearchPage() {
   const [isSearching, setIsSearching] = useState(false);
+  const [error, setError] = useState<string>('');
 
   async function handleSearch(address: string) {
     setIsSearching(true);
+    setError('');
     try {
       const response = await fetch('/api/geocode', {
         method: 'POST',
@@ -16,15 +18,18 @@ export default function SearchPage() {
         body: JSON.stringify({ address }),
       });
 
-      if (!response.ok) {
-        throw new Error('ジオコーディングに失敗しました');
+      const data = await response.json();
+
+      if (!data.success) {
+        setError(data.error?.message || '住所の検索に失敗しました');
+        return;
       }
 
-      const data = await response.json();
       if (data.success) {
         window.location.href = `/reports/search?lat=${data.data.latitude}&lng=${data.data.longitude}&address=${encodeURIComponent(address)}`;
       }
     } catch (error) {
+      setError('通信エラーが発生しました');
       console.error('Search error:', error);
     } finally {
       setIsSearching(false);
@@ -43,6 +48,11 @@ export default function SearchPage() {
         </header>
 
         <div className="bg-white rounded-lg shadow-lg p-8">
+          {error && (
+            <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700">
+              ⚠️ {error}
+            </div>
+          )}
           <SearchAddressForm onSearch={handleSearch} isLoading={isSearching} />
 
           <div className="mt-8 pt-8 border-t border-gray-200">

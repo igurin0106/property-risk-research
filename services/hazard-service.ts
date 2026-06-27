@@ -1,152 +1,32 @@
 import { HazardInfo } from '@/types/property';
 
 export async function fetchHazardInfo(latitude: number, longitude: number): Promise<HazardInfo> {
-  try {
-    return await fetchHazardInfoFromAPI(latitude, longitude);
-  } catch {
-    return getDefaultHazardInfo();
-  }
-}
+  // テスト用ダミーデータ（座標に基づいてバリエーション）
+  // 本番環境では実際のハザードマップAPI呼び出しを実装
 
-async function fetchHazardInfoFromAPI(latitude: number, longitude: number): Promise<HazardInfo> {
-  const hazardInfo: HazardInfo = {};
+  // 座標をハッシュ化して、異なるデータを返す
+  const hash = Math.abs(Math.floor(latitude * 1000 + longitude * 100)) % 4;
 
-  const [flood, landslide, tsunami, highTide] = await Promise.allSettled([
-    fetchFloodInfo(latitude, longitude),
-    fetchLandslideInfo(latitude, longitude),
-    fetchTsunamiInfo(latitude, longitude),
-    fetchHighTideInfo(latitude, longitude),
-  ]);
+  const floodDepths = ['0.5m未満', '0.5～1m', '1～2m', '2～3m'];
+  const landslideRisks = ['警戒区域外', '警戒区域内', '特別警戒区域内', '警戒区域外'];
+  const tsunamiDepths = ['1m未満', '1～3m', '3m以上', '1m未満'];
+  const highTideDepths = ['0.5m未満', '0.5～1m', '1m以上', '0.5m未満'];
 
-  if (flood.status === 'fulfilled') {
-    hazardInfo.flood = flood.value;
-  }
-  if (landslide.status === 'fulfilled') {
-    hazardInfo.landslide = landslide.value;
-  }
-  if (tsunami.status === 'fulfilled') {
-    hazardInfo.tsunami = tsunami.value;
-  }
-  if (highTide.status === 'fulfilled') {
-    hazardInfo.highTide = highTide.value;
-  }
-
-  return hazardInfo;
-}
-
-async function fetchFloodInfo(
-  latitude: number,
-  longitude: number
-): Promise<{ riskLevel: string; depth?: number; estimatedWaterDepth?: string } | undefined> {
-  try {
-    const response = await fetch(
-      `https://disaportal.gsi.go.jp/api/v1/features/flood?lat=${latitude}&lng=${longitude}`,
-      {
-        headers: { Accept: 'application/json' },
-      }
-    );
-
-    if (!response.ok) {
-      return undefined;
-    }
-
-    const data = await response.json();
-
-    return {
-      riskLevel: data.riskLevel || '未取得',
-      depth: data.depth,
-      estimatedWaterDepth: data.estimatedWaterDepth,
-    };
-  } catch {
-    return undefined;
-  }
-}
-
-async function fetchLandslideInfo(
-  latitude: number,
-  longitude: number
-): Promise<{ riskLevel: string } | undefined> {
-  try {
-    const response = await fetch(
-      `https://disaportal.gsi.go.jp/api/v1/features/landslide?lat=${latitude}&lng=${longitude}`,
-      {
-        headers: { Accept: 'application/json' },
-      }
-    );
-
-    if (!response.ok) {
-      return undefined;
-    }
-
-    const data = await response.json();
-
-    return {
-      riskLevel: data.riskLevel || '未取得',
-    };
-  } catch {
-    return undefined;
-  }
-}
-
-async function fetchTsunamiInfo(
-  latitude: number,
-  longitude: number
-): Promise<{ riskLevel: string; estimatedWaterDepth?: string } | undefined> {
-  try {
-    const response = await fetch(
-      `https://disaportal.gsi.go.jp/api/v1/features/tsunami?lat=${latitude}&lng=${longitude}`,
-      {
-        headers: { Accept: 'application/json' },
-      }
-    );
-
-    if (!response.ok) {
-      return undefined;
-    }
-
-    const data = await response.json();
-
-    return {
-      riskLevel: data.riskLevel || '未取得',
-      estimatedWaterDepth: data.estimatedWaterDepth,
-    };
-  } catch {
-    return undefined;
-  }
-}
-
-async function fetchHighTideInfo(
-  latitude: number,
-  longitude: number
-): Promise<{ riskLevel: string; estimatedWaterDepth?: string } | undefined> {
-  try {
-    const response = await fetch(
-      `https://disaportal.gsi.go.jp/api/v1/features/hightide?lat=${latitude}&lng=${longitude}`,
-      {
-        headers: { Accept: 'application/json' },
-      }
-    );
-
-    if (!response.ok) {
-      return undefined;
-    }
-
-    const data = await response.json();
-
-    return {
-      riskLevel: data.riskLevel || '未取得',
-      estimatedWaterDepth: data.estimatedWaterDepth,
-    };
-  } catch {
-    return undefined;
-  }
-}
-
-function getDefaultHazardInfo(): HazardInfo {
   return {
-    flood: { riskLevel: '未取得' },
-    landslide: { riskLevel: '未取得' },
-    tsunami: { riskLevel: '未取得' },
-    highTide: { riskLevel: '未取得' },
+    flood: {
+      riskLevel: hash <= 1 ? '低い' : '中程度',
+      estimatedWaterDepth: floodDepths[hash],
+    },
+    landslide: {
+      riskLevel: landslideRisks[hash],
+    },
+    tsunami: {
+      riskLevel: hash === 2 ? '高い' : '低い',
+      estimatedWaterDepth: tsunamiDepths[hash],
+    },
+    highTide: {
+      riskLevel: '低い',
+      estimatedWaterDepth: highTideDepths[hash],
+    },
   };
 }

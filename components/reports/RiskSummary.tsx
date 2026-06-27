@@ -104,7 +104,9 @@ export function RiskSummary({ address, urbanPlanning, hazards }: RiskSummaryProp
             {hazards.flood && (
               <li className="flex justify-between text-sm">
                 <span className="text-gray-700">洪水浸水想定:</span>
-                <span className="font-medium text-gray-900">{hazards.flood.riskLevel}</span>
+                <span className="font-medium text-gray-900">
+                  {hazards.flood.estimatedWaterDepth || hazards.flood.riskLevel}
+                </span>
               </li>
             )}
             {hazards.landslide && (
@@ -116,13 +118,17 @@ export function RiskSummary({ address, urbanPlanning, hazards }: RiskSummaryProp
             {hazards.tsunami && (
               <li className="flex justify-between text-sm">
                 <span className="text-gray-700">津波浸水想定:</span>
-                <span className="font-medium text-gray-900">{hazards.tsunami.riskLevel}</span>
+                <span className="font-medium text-gray-900">
+                  {hazards.tsunami.estimatedWaterDepth || hazards.tsunami.riskLevel}
+                </span>
               </li>
             )}
             {hazards.highTide && (
               <li className="flex justify-between text-sm">
                 <span className="text-gray-700">高潮浸水想定:</span>
-                <span className="font-medium text-gray-900">{hazards.highTide.riskLevel}</span>
+                <span className="font-medium text-gray-900">
+                  {hazards.highTide.estimatedWaterDepth || hazards.highTide.riskLevel}
+                </span>
               </li>
             )}
           </ul>
